@@ -17,7 +17,7 @@ ActiveAdmin.register Status do
   index do
     selectable_column
     id_column
-    column "User" do |user|
+    column "User_Id" do |user|
       link_to user.user_id, admin_statuses_path
     end
     column :subject
@@ -30,7 +30,7 @@ ActiveAdmin.register Status do
     column :text
     
  end
-  filter :email
+  filter :user_id
   filter :subject
   filter :intime
   filter :outtime

@@ -3,7 +3,7 @@ before_action :require_login
  
   def create
   	#render plain: params[:status].inspect
-  	  @status = Status.new(status_params)
+  	  @status = current_user.statuses.create(status_params)
  		 	@status.save
   	redirect_to @status
   end
@@ -13,16 +13,8 @@ before_action :require_login
 	end
 
   def status_params
-     	params.require(:status).permit(:user_id, :subject, :intime, :outtime, :breaktime, 
- 		:meetingtime, :workinghours, :projectname, :clientname, :workinghours, :taskdo, :coordinate, :text)
+     	params.require(:status).permit(:subject, :intime, :outtime, :breaktime, 
+ 		:meetingtime, :workinghours,:coordinate, :text)
   end
- 
-  private
-  def require_login
-    unless user_signed_in?
-      flash[:notice] = "You must be logged in to access Status."
-      redirect_to new_user_session_path # halts request cycle
-    end
-  end
- 
+  
 end
