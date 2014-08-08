@@ -1,0 +1,5 @@
+class UsersSessionsController < ApplicationController
+	def new
+		<h1>sessions</h1>
+	end
+end

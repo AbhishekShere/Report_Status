@@ -1,0 +1,11 @@
+// Place all the styles related to the statuses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.status_content{
+	border:1px;
+	padding-left:20px;
+	font-size:15px;
+	font-weight:italic;
+	color:Black;
+    }
+

@@ -1,0 +1,23 @@
+class StatusesController < ApplicationController
+	def new
+  end
+ 
+  def create
+  	#render plain: params[:status].inspect
+  	@status = Status.new(status_params)
+ 
+  	@status.save
+  	redirect_to @status
+  end
+
+	def show
+		@status = Status.find(params[:id])
+	end
+
+ 
+  def status_params
+  	params.require(:status).permit(:user, :subject, :intime, :outtime, :breaktime, 
+  	:meetingtime, :totalworkinghours, :projectname, :clientname, :workinghours, :taskdo, :coordinate, :text)
+  end
+
+end

@@ -1,0 +1,35 @@
+<html>
+<head>
+
+</head>
+<div style="border-style: inset;
+    border-width: 5px;background-color:#380000 ;padding-top:25px;padding-left:12px;width:1282px;height:60px;">
+
+  <% if user_signed_in? %>
+	 <span style="font-size:20px;color:white;float:left;">
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to 'Status', new_status_path, :class => 'navbar-link' %> |
+      <%= link_to 'Mailer', new_mail_user_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    </span>
+       <span style="font-size:20px;color:white;float:right;padding-right:30px;">
+      Logged in as: <strong><%= current_user.email %></strong>
+    </span>
+
+  <% else %>
+    <span style="font-family:arial;font-size:30px;float:left;padding-left:18px">
+      <%= link_to 'App Of Status Report', root_path, :class => 'navbar-link' %>
+    </span>
+
+    <span style="font-size:20px;float:right;padding-right:18px;">
+	   <%= link_to 'Sign In', new_user_session_path, :class => 'navbar-link' %>
+    </span>
+    <br><br>
+
+    <h3 style="float:right;padding-right:18px;font-size:10px">
+    <%= link_to 'Admin',  new_admin_user_session_path , :class => 'navbar-link' %>
+    </h3>
+    
+  <% end %>
+</div>
+</html>

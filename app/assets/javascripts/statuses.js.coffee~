@@ -1,0 +1,16 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      $("input").focus(function(){
+      $(this).css("background-color","#cccccc");
+      });
+      $("input").blur(function(){
+      $(this).css("background-color","#ffffff");
+      });
+      });
+    </script>
+

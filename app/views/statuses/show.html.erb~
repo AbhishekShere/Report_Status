@@ -1,0 +1,65 @@
+<body>
+<p>
+	<strong>Subject:</strong>
+    <%= @status.subject %>
+</p>
+ 
+<p>
+  <strong>Intime:</strong>
+  <%= @status.intime %>
+</p>
+
+ 
+<p>
+  <strong>Outtime:</strong>
+  <%= @status.outtime %>
+</p>
+
+ 
+<p>
+  <strong>Breaktime:</strong>
+  <%= @status.breaktime %>
+</p>
+
+ 
+<p>
+  <strong>Meetingtime:</strong>
+  <%= @status.meetingtime %>
+</p>
+
+ 
+<p>
+  <strong>Projectname:</strong>
+  <%= @status.projectname %>
+</p>
+
+ 
+<p>
+  <strong>Clientname:</strong>
+  <%= @status.clientname %>
+</p>
+
+ 
+<p>
+  <strong>Workinghours:</strong>
+  <%= @status.workinghours %>
+</p>
+
+ 
+<p>
+  <strong>Taskdo:</strong>
+  <%= @status.taskdo %>
+</p>
+
+ 
+<p>
+  <strong>Coordinate:</strong>
+  <%= @status.coordinate %>
+</p>
+
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @status.text %>
+</p>
+
