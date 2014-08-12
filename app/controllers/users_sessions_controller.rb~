@@ -1,5 +1,13 @@
 class UsersSessionsController < ApplicationController
+	def create
+	end
+	
+	def status_list
+	end
+	
 	def new
-		<h1>sessions</h1>
+	end
+	
+	def destroy
 	end
 end

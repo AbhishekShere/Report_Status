@@ -19,15 +19,17 @@ ActiveAdmin.register User do
         selectable_column
     id_column
     column :email
+    column :fname
     column :current_sign_in_at
     column :sign_in_count
     column :created_at
     actions
-    column "Status" do |user|
-      link_to user.statuses, admin_statuses_path
+    column "Status_List" do |user|
+      link_to 'status', status_list_admin_user_path(user)
     end
   end
   filter :email
+  filter :fname
   filter :current_sign_in_at
   filter :sign_in_count
   filter :created_at
@@ -41,15 +43,20 @@ collection_action :new_invitation do
 end
  
 collection_action :send_invitation, :method => :post do
-  @user = User.invite!(params[:user], current_user)
+  @user = User.invite!(params[:user])
 if @user.errors.empty?
   flash[:success] = "User has been successfully invited."
   redirect_to admin_users_path
 else
   messages = @user.errors.full_messages.map { |msg| msg }.join
   flash[:error] = "Error: " + messages
-  redirect_to new_invitation_admin_users_path
+ redirect_to new_invitation_admin_users_path
 end
+end
+
+member_action :status_list do
+   @user = User.find(params[:id])
+
 end
 
 end

@@ -1,0 +1,13 @@
+<h4>Status could not be saved.</h4>
+<p> please fill all fields.<p>
+<% if @statuses.error.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@status.errors.count, "error") %> prohibited this post from being saved:</h2>
+ 
+    <ul>
+    <% @status.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

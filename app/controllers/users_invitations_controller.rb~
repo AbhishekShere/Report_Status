@@ -3,21 +3,23 @@ class UsersInvitationsController < Devise::InvitationsController
 	def edit
 		render :edit, :layout => false
 	end
+	def status_list
+	end
  	def create
-    	@user = User.new(user_params)
+    @user = User.new(user_params)
     	# ...
-  	end
+  end
 	# PUT /resource/invitation
-	#def update
+	def update
+		self.resource = accept_resource
 		#self.resource = resource_class.accept_invitation!(resource_params)
- #		if resource.errors.empty?
-#			flash_message = resource.active_for_authentication? ? :updated : :updated_not_active
-#			set_flash_message :notice, flash_message
-#			sign_in(resource_name, resource)
- #
-#			redirect_to '/profile', :alert => "Welcome! Please fill out your profile and upload a headshot."
-#		else
-		#	respond_with_navigational(resource){ render :edit, :layout => false }
-		#end
-	#end
+ 		if resource.errors.empty?
+			flash_message = resource.active_for_authentication? ? :updated : :updated_not_active
+			set_flash_message :notice, flash_message
+			sign_in(resource_name, resource)
+			redirect_to '/users/edit', :alert => "Welcome! Please fill out your profile and upload a headshot."
+		else
+			respond_with_navigational(resource){ render :edit, :layout => false }
+		end
+	end
 end

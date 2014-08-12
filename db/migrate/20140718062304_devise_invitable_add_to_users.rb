@@ -24,4 +24,8 @@ class DeviseInvitableAddToUsers < ActiveRecord::Migration
     end
     change_column_null    :users, :encrypted_password, false
   end
+	
+	def change
+		    add_column :users, :invited_by_id, :integer
+	end
 end

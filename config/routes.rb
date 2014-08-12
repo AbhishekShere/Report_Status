@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-   get 'welcome/index'
-  
+  get 'welcome/index'
 	root 'welcome#index'
+
+  get 'users_home', to: 'welcome#users_home'
+
+  get 'profile_edit', to: 'welcome#edit_profile'
+  post 'post_profile_edit', to: 'welcome#update_edit_profile'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :statuses
   resources :mail_users
+
 
   devise_for :users,
 	:controllers => {
@@ -14,7 +20,11 @@ Rails.application.routes.draw do
 	:passwords => "user_passwords",
 	# Proper invitations should be sent through the active_admin interface.
 	:invitations => 'users_invitations' # user_invitations_controller.rb
-	}
+	}, :skip => [:registrations]
+ as :user do
+   get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+   put 'users' => 'devise/registrations#update', :as => 'user_registration'
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

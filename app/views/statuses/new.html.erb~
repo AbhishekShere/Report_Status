@@ -17,7 +17,7 @@
   <body>
   
     <%= form_for :status, url: statuses_path do |f| %>
-	<%= form_for :project, url: projects_path do |p| %>
+	
   <div class="status_content">
     <table>
       <tr>
@@ -44,30 +44,11 @@
         <td><%= f.time_field :meetingtime %></td>
       </tr>
       <tr>
-        <td><strong><%= f.label :working_hours %> :</strong></td>
-        <td><%= f.time_field :workinghours %></td>
+        <td><strong><%= f.label :total_working_hours %> :</strong></td>
+        <td><%= f.time_field :working %></td>
       </tr>
     </table>
     <hr>
-    <table>  
-      <tr>
-        <td><strong><%= p.label :project_name %> :</strong></td>
-        <td><%= p.text_field :projectname %></td>
-      </tr>
-      <tr>
-        <td><strong><%= p.label :client_name %> :</strong></td>
-        <td><%= p.text_field :clientname %></td>
-      </tr>
-      <tr>
-        <td><strong><%= p.label :working_hours %> :</strong></td>
-        <td><%= p.time_field :workinghours %></td>
-      </tr>
-      <tr>
-        <td><strong><%= p.label :task_do %> :</strong></td>
-        <td><%= p.text_field :taskdo %></td>
-      </tr>
-      </table>
-      <hr> 
     <table> 
       <tr>
         <td><strong><%= f.label :co_ordinate %> :</b></td>
@@ -86,5 +67,6 @@
     </p>
       </div>
   <% end %>
+  
 </body>
 </html>

@@ -1,8 +1,7 @@
 class StatusesController < ApplicationController
-before_action :require_login
- 
+  before_action :require_login
+
   def create
-  	#render plain: params[:status].inspect
   	  @status = current_user.statuses.create(status_params)
  		 	@status.save
   	redirect_to @status
@@ -16,5 +15,5 @@ before_action :require_login
      	params.require(:status).permit(:subject, :intime, :outtime, :breaktime, 
  		:meetingtime, :workinghours,:coordinate, :text)
   end
-  
+
 end

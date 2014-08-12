@@ -17,7 +17,7 @@
   <body>
   
     <%= form_for :status, url: statuses_path do |f| %>
-	
+
   <div class="status_content">
     <table>
       <tr>
@@ -45,7 +45,7 @@
       </tr>
       <tr>
         <td><strong><%= f.label :total_working_hours %> :</strong></td>
-        <td><%= f.time_field :working %></td>
+        <td><%= f.time_field :workinghours %></td>
       </tr>
     </table>
     <hr>
@@ -67,5 +67,6 @@
     </p>
       </div>
   <% end %>
+  
 </body>
 </html>

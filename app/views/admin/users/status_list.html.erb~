@@ -1,3 +1,4 @@
+<p> Status list </p>
 <body>
 <div class="status_content">
 <table>
@@ -22,7 +23,7 @@
  
 <tr>
   <td><strong>Break Time :</strong></td>
-  <td><%= @status.breaktime %></td>
+  <td><%= @user.status.breaktime %></td>
 </tr>
 
  

@@ -1,50 +1,32 @@
 <html>
   <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function(){
-      $("input").focus(function(){
-      $(this).css("background-color","#cccccc");
-      });
-      $("input").blur(function(){
-      $(this).css("background-color","#ffffff");
-      });
-      });
-    </script>
-  </head>
+ </head>
   <body>
   <div class="registartion_content">
-<h2>Edit <%= current_user.to_s.humanize %></h2>
 
-<%= form_for(user, as: current_user, url: user_registration_path, html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :First_name %><br />
+<%= form_for(User, as: current_user, url:  post_profile_edit_path , html: { method: :post }) do |f| %>
+ 
+  <div><%= f.label :First_Name %><br />
   <%= f.text_field :fname, autofocus: true %></div>
-  
-  <div><%= f.label :Last_name %><br />
+
+  <div><%= f.label :Last_Name %><br />
   <%= f.text_field :lname, autofocus: true %></div>
-  
+
   <div><%= f.label :DOB %><br />
   <%= f.date_field :dob, autofocus: true %></div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
 
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
+<br><hr><hr><br>
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
     <br>
   <div><%= f.submit "Update" %></div>
 <% end %>
 <hr>
-
 
 <%= link_to "Back", :back %>
 </div>
