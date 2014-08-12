@@ -17,10 +17,6 @@
 
 <%= form_for(User, as: current_user, url: user_registration_path, html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-  
-  <div><%= f.label :Email %><br />
-  <%= f.text_field :email, autofocus: true %></div>
-
   <div><%= f.label :First_name %><br />
   <%= f.text_field :fname, autofocus: true %></div>
   

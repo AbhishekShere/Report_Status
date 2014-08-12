@@ -12,11 +12,10 @@ Rails.application.routes.draw do
   resources :statuses
   resources :mail_users
 
-
   devise_for :users,
 	:controllers => {
 	#:sessions => "users_sessions_controller",
-	#:registrations => "user_registrations",
+	#:registrations => "devise_update/update",
 	:passwords => "user_passwords",
 	# Proper invitations should be sent through the active_admin interface.
 	:invitations => 'users_invitations' # user_invitations_controller.rb

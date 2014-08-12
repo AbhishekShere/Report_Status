@@ -5,9 +5,9 @@ class CreateStatuses < ActiveRecord::Migration
       t.string :subject
       t.time :intime
       t.time :outtime
-      t.time :breaktime
-      t.time :meetingtime
-			t.time :workinghours
+      t.float :breaktime
+      t.float :meetingtime
+			t.float :workinghours
       t.string :coordinate
       t.text :text
 
