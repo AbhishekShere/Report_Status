@@ -55,8 +55,8 @@ end
 end
 
 member_action :status_list do
-   @user = User.find(params[:id])
-
+  @user = User.find(params[:id])
+  @status=@user.statuses
 end
 
 end
