@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 	root 'welcome#index'
 
   get 'users_home', to: 'welcome#users_home'
+  get 'status_index', to: 'statuses#index'
 
   get 'profile_edit', to: 'welcome#edit_profile'
   post 'post_profile_edit', to: 'welcome#update_edit_profile'

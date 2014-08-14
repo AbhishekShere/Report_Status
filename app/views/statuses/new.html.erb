@@ -2,15 +2,14 @@
 <html>
   <head>
 
- <script type="text/javascript">
-  $(document).ready(function(){
-    $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
-  })
+<script type="text/javascript">
+$(document).ready(function(){
+$('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
+})
 </script>
 
-    
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
       $(document).ready(function(){
       $("input").focus(function(){
       $(this).css("background-color","#cccccc");
@@ -19,13 +18,16 @@
       $(this).css("background-color","#ffffff");
       });
       });
-    </script>
+</script>
+    
+
      </head>
   <body>
-  
   <%= form_for :status, url: statuses_path do |f| %>
 
   <div class="status_content">
+  <%= link_to 'Status Index',  status_index_path  %>
+  <hr>
     <table>
       <tr>
         <td><strong><%= f.label :Subject %> :</strong></td>
@@ -36,15 +38,15 @@
     <table>
       <tr>
         <td><strong><%= f.label :Date %> :</strong></td>
-        <td><%= f.date_field :date, 'data-behaviour' => 'datepicker', :placeholder => 'dd-mm-yyyy' %></td>
+        <td><%= f.date_field :date, 'data-behaviour' => 'datepicker', :placeholder => 'dd-mm-yyyy'%></td>
       </tr>  
       <tr>
         <td><strong><%= f.label :In_time %> :</strong></td>
-        <td><%= f.time_field :intime %></td>
+        <td><%= f.time_select :intime, {:ampm => true} %></td>
       </tr>
       <tr>
         <td><strong><%= f.label :out_time %> :</strong></td>
-        <td><%= f.time_field :outtime %></td>
+        <td><%= f.time_select :outtime ,{:ampm => true}%></td>
       </tr>
       <tr>
         <td><strong><%= f.label :break_time %> :</strong></td>

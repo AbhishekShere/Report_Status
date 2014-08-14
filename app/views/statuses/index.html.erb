@@ -1,3 +1,43 @@
-<h4>Status could not be saved.</h4>
-<p> please fill all fields.<p>
+<html>
+<head>
+<style>
+table,th,td
+{
+border: 1px solid black;
+}
+th
+{
+font-size: 20px;border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div class="status_content">
+<table  border=1px solid black;>
+<th>Subject</th>
+<th>Date</th>
+<th>In Time</th>
+<th>Out Time</th>
+<th>Break Time</th>
+<th>Meeting Time</th>
+<th>Total Working Hours</th>
+<th>Coordinate</th>
+<th>Text</th>
 
+  <%  @status.each do |status| %>
+    <tr>
+    	<td><%= status.subject %></td>
+      <td><%= status.date %></td>
+      <td><%= status.intime %></td>
+      <td><%= status.outtime %></td>
+      <td><%= status.breaktime %> hr</td>
+      <td><%= status.meetingtime %> hr</td>
+      <td><%= status.workinghours %> hr</td>
+      <td><%= status.coordinate %></td>
+      <td><%= status.text %></td>
+    </tr>
+ <% end %>
+</table>
+</div>
+</body>
+</html>

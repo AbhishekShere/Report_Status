@@ -1,5 +1,10 @@
 class StatusesController < ApplicationController
   before_action :require_login
+  
+  def index
+    @user = current_user
+    @status=@user.statuses
+  end
 
   def create
   	  @status = current_user.statuses.create(status_params)
