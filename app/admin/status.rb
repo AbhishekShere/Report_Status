@@ -17,10 +17,11 @@ ActiveAdmin.register Status do
   index do
     selectable_column
     id_column
-    column "User_id" do |user|
-      link_to user.user_id, admin_user_path(user.user_id)
+    column "User_id" do |status|
+      link_to status.user.fname, admin_user_path(status.user)
     end
     column :subject
+    column :date
     column :intime  
     column :outtime 
     column :breaktime
@@ -32,6 +33,7 @@ ActiveAdmin.register Status do
  end
   filter :id
   filter :subject
+  filter :date
   filter :intime
   filter :outtime
   filter :breaktime

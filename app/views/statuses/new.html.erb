@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+ <script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
+  })
+</script>
+
+    
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
       $("input").focus(function(){
@@ -12,11 +20,10 @@
       });
       });
     </script>
-   
-  </head>
+     </head>
   <body>
   
-    <%= form_for :status, url: statuses_path do |f| %>
+  <%= form_for :status, url: statuses_path do |f| %>
 
   <div class="status_content">
     <table>
@@ -26,7 +33,11 @@
       </tr>
     </table>
     <hr>
-    <table>  
+    <table>
+      <tr>
+        <td><strong><%= f.label :Date %> :</strong></td>
+        <td><%= f.date_field :date, 'data-behaviour' => 'datepicker' %></td>
+      </tr>  
       <tr>
         <td><strong><%= f.label :In_time %> :</strong></td>
         <td><%= f.time_field :intime %></td>
@@ -67,6 +78,7 @@
     </p>
       </div>
   <% end %>
+  
   
 </body>
 </html>

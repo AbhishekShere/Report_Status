@@ -15,6 +15,7 @@ font-size: 20px;border-radius: 5px;
 <div class="status_content">
 <table  border=1px solid black;>
 <th>Subject</th>
+<th>Date</th>
 <th>In Time</th>
 <th>Out Time</th>
 <th>Break Time</th>
@@ -26,6 +27,7 @@ font-size: 20px;border-radius: 5px;
   <%  @status.each do |status| %>
     <tr>
     	<td><%= status.subject %></td>
+      <td><%= status.date %></td>
       <td><%= status.intime %></td>
       <td><%= status.outtime %></td>
       <td><%= status.breaktime %> hr</td>

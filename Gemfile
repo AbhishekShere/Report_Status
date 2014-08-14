@@ -42,6 +42,8 @@ gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise_invitable', '~> 1.3.4'
 gem "letter_opener", :group => :development
-
+gem 'jquery-ui-rails'
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 
