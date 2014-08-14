@@ -1,7 +1,12 @@
 <html>
   <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
+    })
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script>
       $(document).ready(function(){
       $("input").focus(function(){
       $(this).css("background-color","#cccccc");
@@ -22,10 +27,10 @@
   
   <div><%= f.label :Last_name %><br />
   <%= f.text_field :lname, autofocus: true %></div>
-  
-  <div><%= f.label :DOB %><br />
-  <%= f.date_field :dob, autofocus: true %></div>
-
+  <div>
+  <%= f.label :DOB %><br />
+  <td><%= f.date_field :dob, 'data-behaviour' => 'datepicker', :placeholder => 'dd-mm-yyyy'%></td>
+  </div>
   <% if devise_mapping.confirmable? && user.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

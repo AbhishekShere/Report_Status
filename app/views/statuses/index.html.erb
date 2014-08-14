@@ -28,8 +28,8 @@ font-size: 20px;border-radius: 5px;
     <tr>
     	<td><%= status.subject %></td>
       <td><%= status.date %></td>
-      <td><%= status.intime %></td>
-      <td><%= status.outtime %></td>
+      <td><%= status.intime.strftime "%I:%M %p" %></td>
+      <td><%= status.outtime.strftime "%I:%M %p" %></td>
       <td><%= status.breaktime %> hr</td>
       <td><%= status.meetingtime %> hr</td>
       <td><%= status.workinghours %> hr</td>
