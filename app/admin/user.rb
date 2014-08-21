@@ -60,4 +60,3 @@ member_action :status_list do
 end
 
 end
-

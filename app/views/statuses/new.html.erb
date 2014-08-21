@@ -19,6 +19,24 @@ $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
       });
       });
 </script>
+  <script>
+    $(document).ready(function(){
+    $("#1").click(function(){
+      $("#p1").show();
+    });
+    $("#2").click(function(){
+      $("#p2").show();
+    });
+    $("#3").click(function(){
+      $("#p3").show();
+    });
+  });
+</script>
+<style>
+ #p1,#p2,#p3 {
+   display: none;
+ }
+ </style>
     
 
      </head>
@@ -50,15 +68,15 @@ $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
       </tr>
       <tr>
         <td><strong><%= f.label :break_time %> :</strong></td>
-        <td><%= f.time_field :breaktime %> (e.g.- for 30 min = 00.30)</td>
+        <td id="1"><%= f.time_field :breaktime %><span id="p1">(e.g.- for 30 min = 00.30)</span></td>
       </tr>
       <tr>
         <td><strong><%= f.label :meeting_time %> :</strong></td>
-        <td><%= f.time_field :meetingtime %>(e.g.- for 1 hour 45 min = 01.45)</td>
+        <td id="2"><%= f.time_field :meetingtime %><span id="p2">(e.g.- for 1 hour 45 min = 01.45)</span></td>
       </tr>
       <tr>
         <td><strong><%= f.label :total_working_hours %> :</strong></td>
-        <td><%= f.time_field :workinghours %>(e.g.- for 8 hour = 08.00)</td>
+        <td id="3"><%= f.time_field :workinghours %><span id="p3">(e.g.- for 8 hour = 08.00)</span></td>
       </tr>
     </table>
     <hr>

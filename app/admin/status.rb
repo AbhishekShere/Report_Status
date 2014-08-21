@@ -13,7 +13,6 @@ ActiveAdmin.register Status do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-
   index do
     selectable_column
     id_column
