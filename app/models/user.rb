@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	#devise :invitable,:database_authenticatable
+
 end

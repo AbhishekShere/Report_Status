@@ -1,5 +1,4 @@
 ActiveAdmin.register Status do
-
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -41,4 +40,14 @@ ActiveAdmin.register Status do
   filter :coordinate
   filter :text
   
+  def index
+    @user = User.find(params[:id])
+    @statuses=@user.status
+    respond_to do |format|
+    respond_to :xls, :html, :csv
+      format.html
+      format.csv { render text: @statuses.to_csv }
+      format.xml
+    end
+  end
 end

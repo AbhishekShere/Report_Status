@@ -15,8 +15,8 @@ font-size: 20px;border-radius: 5px;
 <b>Status Index of  </b><span style="color:darkolivegreen;font-weight:bold;font-size:30px;"><%= @user.fname %></span>
 <p>
   Download:
-  <%= link_to "CSV", admin_status_path(format: "csv") %> |
-  <%= link_to "Excel", admin_status_path(format: "xls") %>
+  <%= link_to "CSV", admin_statuses_path(format: "csv") %> |
+  <%= link_to "Excel", admin_statuses_path(format: "xls") %>
 </p>
 <div class="status_content">
 <br>

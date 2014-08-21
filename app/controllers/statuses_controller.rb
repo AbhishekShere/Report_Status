@@ -1,15 +1,6 @@
 class StatusesController < ApplicationController
   before_action :require_login
 
-  def status
-    @statuses = Status.order(:id)
-    respond_to do |format|
-      format.html
-      format.csv { send_data @statuses.to_csv }
-      format.xls
-    end
-  end
-
   def index
     @user = current_user
     @status=@user.statuses
