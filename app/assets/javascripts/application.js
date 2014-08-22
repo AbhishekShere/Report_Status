@@ -18,4 +18,11 @@
 //= require jquery-ui/datepicker
 //= require bootstrap-datepicker
 
-
+$(document).ready(function(){
+  $("input").focus(function(){
+  	$(this).css("background-color","#cccccc");
+  });
+  $("input").blur(function(){
+  	$(this).css("background-color","#ffffff");
+	});
+});

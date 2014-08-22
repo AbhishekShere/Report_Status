@@ -1,49 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <head>
-
-<script type="text/javascript">
-$(document).ready(function(){
-$('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
-})
-</script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
-      $(document).ready(function(){
-      $("input").focus(function(){
-      $(this).css("background-color","#cccccc");
-      });
-      $("input").blur(function(){
-      $(this).css("background-color","#ffffff");
-      });
-      });
-</script>
-  <script>
-    $(document).ready(function(){
-    $("#1").click(function(){
-      $("#p1").show();
-    });
-    $("#2").click(function(){
-      $("#p2").show();
-    });
-    $("#3").click(function(){
-      $("#p3").show();
-    });
+$(document).ready(function(){
+$("#1").click(function(){
+    $("#p1").show();
   });
+  $("#2").click(function(){
+    $("#p2").show();
+  });
+  $("#3").click(function(){
+    $("#p3").show();
+  });
+});
 </script>
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('#status_date').datepicker({format: 'dd-mm-yyyy'});
+  })
+</script>
+
 <style>
- #p1,#p2,#p3 {
+ #p1,#p2,#p3{
    display: none;
- }
- </style>
+  }
+</style>
     
 
-     </head>
-  <body>
-  <%= form_for :status, url: statuses_path do |f| %>
-
-  <div class="status_content">
+<%= form_for :status, url: statuses_path do |f| %>
+<div class="status_content">
   <%= link_to 'Status Index',  status_index_path  %>
   <hr>
     <table>
@@ -56,7 +38,7 @@ $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
     <table>
       <tr>
         <td><strong><%= f.label :Date %> :</strong></td>
-        <td><%= f.date_field :date, 'data-behaviour' => 'datepicker', :placeholder => 'dd-mm-yyyy'%></td>
+        <td><%= f.date_field :date, :placeholder => 'dd-mm-yyyy'%></td>
       </tr>  
       <tr>
         <td><strong><%= f.label :In_time %> :</strong></td>
@@ -98,7 +80,3 @@ $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
     </p>
       </div>
   <% end %>
-  
-  
-</body>
-</html>

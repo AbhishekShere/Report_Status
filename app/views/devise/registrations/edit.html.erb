@@ -1,36 +1,28 @@
-<html>
-  <head>
-  <script type="text/javascript">
-    $(document).ready(function(){
-    $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
-    })
-  </script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-   <script>
-      $(document).ready(function(){
-      $("input").focus(function(){
-      $(this).css("background-color","#cccccc");
-      });
-      $("input").blur(function(){
-      $(this).css("background-color","#ffffff");
-      });
-      });
-    </script>
-  </head>
-  <body>
-  <div class="registartion_content">
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('#user_dob').datepicker({format: 'dd-mm-yyyy'});
+  })
+</script>
+
+<div class="registartion_content">
 
 <%= form_for(User, as: current_user, url: user_registration_path, html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <div><%= f.label :First_name %><br />
-  <%= f.text_field :fname, autofocus: true %></div>
-  
-  <div><%= f.label :Last_name %><br />
-  <%= f.text_field :lname, autofocus: true %></div>
+
+<%= devise_error_messages! %>
+
+  <div>
+  <%= f.label :First_name %><br />
+  <%= f.text_field :fname, autofocus: true %>
+  </div>
+  <div>
+  <%= f.label :Last_name %><br />
+  <%= f.text_field :lname, autofocus: true %>
+  </div>
   <div>
   <%= f.label :DOB %><br />
-  <td><%= f.date_field :dob, 'data-behaviour' => 'datepicker', :placeholder => 'dd-mm-yyyy'%></td>
+  <%= f.date_field :dob, :placeholder => 'dd-mm-yyyy'%>
   </div>
+
   <% if devise_mapping.confirmable? && user.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -48,8 +40,5 @@
 <% end %>
 <hr>
 
-
 <%= link_to "Back", :back %>
 </div>
-</body>
-</html>

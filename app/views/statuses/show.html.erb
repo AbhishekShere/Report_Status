@@ -1,4 +1,3 @@
-<body>
 <div class="status_content">
  <%= link_to 'Status Index',  status_index_path  %>
 <table>
@@ -6,55 +5,46 @@
 	<td><strong>Subject :</strong></td>
 	<td><%= @status.subject %></td>
 </tr>
- <hr>
-</table>
- <table>
- <tr>
-  <td><strong>Date :</strong></td>
-  <td><%= l @status.date %></td>
-  </tr>
-<tr>
-  <td><strong>In Time :</strong></td>
-  <td><%= @status.intime.strftime "%I:%M %p"%></td>
-  </tr>
-
-<tr>
-  <td><strong>Out Time :</strong></td>
-  <td><%= @status.outtime.strftime "%I:%M %p" %></td>
-</tr>
-
- 
-<tr>
-  <td><strong>Break Time :</strong></td>
-  <td><%= @status.breaktime %> (hours)</td>
-</tr>
-
- 
-<tr>
-  <td><strong>Meeting Time :</strong></td>
-  <td><%= @status.meetingtime %> (hours)</td>
-</tr>
-
-<tr>
-  <td><strong>Total Working Hours :</strong></td>
-  <td><%= @status.workinghours %> (hours)</td>
-</tr>
 <hr>
 </table>
 <table>
-<tr>
-  <td><strong>Coordinate :</strong></td>
-  <td><%= @status.coordinate %></td>
-</tr>
+  <tr>
+    <td><strong>Date :</strong></td>
+    <td><%= l @status.date %></td>
+  </tr>
+  <tr>
+    <td><strong>In Time :</strong></td>
+    <td><%= @status.intime.strftime "%I:%M %p"%></td>
+  </tr>
+  <tr>
+    <td><strong>Out Time :</strong></td>
+    <td><%= @status.outtime.strftime "%I:%M %p" %></td>
+  </tr>
+  <tr>
+    <td><strong>Break Time :</strong></td>
+    <td><%= @status.breaktime %> (hours)</td>
+  </tr>
+  <tr>
+    <td><strong>Meeting Time :</strong></td>
+    <td><%= @status.meetingtime %> (hours)</td>
+  </tr>
+  <tr>
+    <td><strong>Total Working Hours :</strong></td>
+    <td><%= @status.workinghours %> (hours)</td>
+  </tr>
 <hr>
 </table>
-
-<table> 
-<tr>
-  <td><strong>Text :</strong></td>
-  <td><%= @status.text %></td>
- </tr>
- <hr>
+<table>
+  <tr>
+    <td><strong>Coordinate :</strong></td>
+    <td><%= @status.coordinate %></td>
+  </tr>
+<hr>
 </table>
-</div>
-</body>
+<table> 
+  <tr>
+    <td><strong>Text :</strong></td>
+    <td><%= @status.text %></td>
+  </tr>
+<hr>
+</table>

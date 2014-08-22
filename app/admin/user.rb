@@ -54,9 +54,15 @@ else
 end
 end
 
-member_action :status_list do
+member_action :status_list do                
   @user = User.find(params[:id])
   @status=@user.statuses
+  respond_to do |format|
+    format.html
+    format.csv { render text: @status.to_csv }
+    format.xls
+  end
 end
+
 
 end
