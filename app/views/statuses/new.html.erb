@@ -22,9 +22,9 @@ $("#1").click(function(){
    display: none;
   }
 </style>
-    
-
+ 
 <%= form_for :status, url: statuses_path do |f| %>
+
 <div class="status_content">
   <%= link_to 'Status Index',  status_index_path  %>
   <hr>
@@ -79,4 +79,5 @@ $("#1").click(function(){
       <%= f.submit %>
     </p>
       </div>
+   
   <% end %>

@@ -31,7 +31,7 @@ font-size: 20px;border-radius: 5px;
 <th>Total Working Hours</th>
 <th>Coordinate</th>
 <th>Text</th>
-<%  @status.each do |status| %>
+<% @status.each do |status| %>
   <tr>
     <td><%= link_to status.id, admin_status_path(status.id) %></td>
     <td><%= status.subject %></td>

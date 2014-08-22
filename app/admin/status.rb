@@ -15,7 +15,7 @@ ActiveAdmin.register Status do
   index do
     selectable_column
     id_column
-    column "User_id" do |status|
+    column "User name" do |status|
       link_to status.user.fname, admin_user_path(status.user)
     end
     column :subject

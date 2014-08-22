@@ -27,4 +27,4 @@ en:
       default: "%d-%m-%Y"
 time:
     formats:
-      default: "%H:%M"
+      default: "%I:%M %p"
