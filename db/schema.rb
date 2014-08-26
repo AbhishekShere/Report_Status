@@ -55,11 +55,11 @@ ActiveRecord::Schema.define(version: 20140813062437) do
   end
 
   create_table "projects", force: true do |t|
+    t.integer  "user_id"
     t.string   "projectname"
     t.string   "clientname"
-    t.time     "workinghours"
+    t.float    "pworkinghours"
     t.string   "taskdo"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

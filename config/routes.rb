@@ -4,13 +4,15 @@ Rails.application.routes.draw do
 
   get 'users_home', to: 'welcome#users_home'
   get 'status_index', to: 'statuses#index'
-
+  get 'project_index', to: 'projects#index'
+  get 'users_profile', to: 'welcome#users_profile'
   get 'profile_edit', to: 'welcome#edit_profile'
   post 'post_profile_edit', to: 'welcome#update_edit_profile'
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :statuses
+  resources :projects
   resources :mail_users
 
   devise_for :users,

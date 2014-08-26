@@ -1,6 +1,14 @@
 <html>
 <head>
 <style>
+th {
+    font-size: 1.1em;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #EAF2D3;
+    color: black;
+}
 table,th,td
 {
 border: 1px solid black;
@@ -15,12 +23,12 @@ font-size: 20px;border-radius: 5px;
 <b>Status Index of  </b><span style="color:darkolivegreen;font-weight:bold;font-size:30px;"><%= @user.fname %></span>
 <p>
   Download:
-  <%= link_to "CSV", status_list_admin_user_path(format: "csv") %> |
     <%= link_to "Excel", status_list_admin_user_path(format: "xls") %>
 </p>
 <div class="status_content">
 <br>
 <table  border=1px solid black;>
+<caption>Status Index</caption>
 <th>Status Id</th>
 <th>Subject</th>
 <th>Date</th>

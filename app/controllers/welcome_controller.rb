@@ -12,6 +12,9 @@ class WelcomeController < ApplicationController
   		redirect_to users_home_path
   end
 
+  def users_profile
+  end
+
   private
   def user_detail_params
      	params.require(:user).permit(:fname, :lname, :dob)

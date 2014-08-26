@@ -8,14 +8,16 @@
   <% if user_signed_in? %>
 	 <span style="font-size:20px;color:white;float:left;">
       <%= link_to 'Home',  users_home_path  %> |
-      <%= link_to 'Edit profile',  edit_user_registration_path  %> |
+      <%= link_to 'Profile',  users_profile_path  %> |
       <%= link_to 'Status', new_status_path, :class => 'navbar-link' %> |
+      <%= link_to 'Project', new_project_path, :class => 'navbar-link' %> |
       <%= link_to 'Mailer', new_mail_user_path, :class => 'navbar-link' %> |
       <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
     </span>
        <span style="font-size:20px;color:white;float:right;padding-right:30px;">
        Logged in as: <strong><%= current_user.email %></strong>
-    </span>
+    </span><br><br>
+    <span style="font-size:18px;color:white;float:right;padding-right:50px;">Hello <strong><%= current_user.fname %></strong></span>
 
   <% else %>
     <span style="font-family:arial;font-size:30px;float:left;padding-left:18px">

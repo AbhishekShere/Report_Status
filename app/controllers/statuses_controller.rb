@@ -18,6 +18,6 @@ class StatusesController < ApplicationController
 
   def status_params
     params.require(:status).permit(:subject, :date, :intime, :outtime, :breaktime, 
- 		:meetingtime, :workinghours,:coordinate, :text)
+ 		:meetingtime, :workinghours, :projectname, :clientname, :pworkinghours, :taskdo, :coordinate, :text)
   end
 end

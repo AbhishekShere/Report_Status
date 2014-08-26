@@ -29,6 +29,9 @@ ActiveAdmin.register User do
     column "Status_List" do |user|
       link_to 'status', status_list_admin_user_path(user)
     end
+    column "Project_List" do |user|
+      link_to 'project', project_list_admin_user_path(user)
+    end
   end
   filter :email
   filter :fname
@@ -61,10 +64,16 @@ member_action :status_list do
   @status=@user.statuses
   respond_to do |format|
     format.html
-    format.csv { render text: @status.to_csv }
     format.xls
   end
 end
-
+member_action :project_list do                
+  @user = User.find(params[:id])
+  @project=@user.projects
+   respond_to do |format|
+    format.html
+    format.xls
+  end
+end  
 
 end
